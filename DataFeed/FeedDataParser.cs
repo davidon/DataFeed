@@ -1,6 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Xml.XPath;
+using Newtonsoft.Json.Linq;
 
 namespace DataFeed
 {
@@ -30,6 +33,16 @@ namespace DataFeed
 		public static IFeedDataParser<XPathDocument> ParserFactory(XPathDocument _fileHandler)
 		{
 			return new FeedDataParserXml<XPathDocument>(_fileHandler);
+		}
+		/// <summary>
+		/// get different parser instance for different format of data feed source file
+		/// (overriding to implement factory pattern)
+		/// </summary>
+		/// <param name="_fileHandler">JSON file data source handler</param>
+		/// <returns></returns>
+		public static IFeedDataParser<JObject> ParserFactory(JObject _fileHandler)
+		{
+			return new FeedDataParserJson<JObject>(_fileHandler);
 		}
 
 		/// <summary>

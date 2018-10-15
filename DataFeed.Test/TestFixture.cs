@@ -6,6 +6,97 @@ namespace DataFeed.Test
 {
 	public class TestFixture
 	{
+		public static string JsonStr
+		{
+			get
+			{
+				return
+					@"{
+					'RawData': {
+						'Markets': [
+							{
+								'Id': 'NbSeMfzhDCHT_HdtAYZF_7zjFkI',
+								'Selections': [
+									{
+										'Id': 'b0Ut0-KyBdfknmjckAQHY1sxs3U',
+										'Price': 4.2,
+										'Tags': {
+											'participant': '1',
+											'name': 'Coronel'
+										}
+									},
+									{
+										'Id': '222GQLldt5t2lZCW93EgdBMwDIbPzzz',
+										'Price': 12,
+										'Tags': {
+											'participant': '2',
+											'name': 'Advancing'
+										}
+									},
+									{
+										'Id': '333GQLldt5t2lW93EgdBMwDIbPyyy',
+										'Price':2.2,
+										'Tags': {
+											'participant': '3',
+											'name': 'Curlins Honor'
+										}
+									},
+									{
+										'Id': '444GQLldt5t2lW93EgdBMwDIbPxxx',
+										'Price':1.89,
+										'Tags': {
+											'participant': '4',
+											'name': 'Lookin To Strike'
+										}
+									},
+									{
+										'Id': '555GQLldt5t2lW93EgdBMwDIbPwww',
+										'Price':3.2,
+										'Tags': {
+											'participant': '5',
+											'name': 'Mr Ritz'
+										}
+									},
+									{
+										'Id': '666GQLldt5t2lW93EgdBMwDIbPvvv',
+										'Price':8.65,
+										'Tags': {
+											'participant': '6',
+											'name': 'Strike Me Down'
+										}
+									},
+									{
+										'Id': '777GQLldt5t2lW93EgdBMwDIbPuuu',
+										'Price':6.54,
+										'Tags': {
+											'participant': '7',
+											'name': 'Flight Deck'
+										}
+									},
+									{
+										'Id': '888GQLldt5t2lW93EgdBMwDIbPttt',
+										'Price':7.65,
+										'Tags': {
+											'participant': '8',
+											'name': 'My Mandara'
+										}
+									},
+									{
+										'Id': '999GQLldt5t2lW93EgdBMwDIbPsss',
+										'Price':5.43,
+										'Tags': {
+											'participant': '9',
+											'name': 'Peppered'
+										}
+									}
+								]
+							}
+					    ]
+					}
+				}";
+			}	//end of get
+		}	//end JsonStr
+
 		public static string XmlStr
 		{
 			get { return @"
