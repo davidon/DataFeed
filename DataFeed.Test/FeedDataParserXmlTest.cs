@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Xml.XPath;
 using Xunit;
+using System.Xml.XPath;
+using System.IO;
 
 namespace DataFeed.Test
 {
@@ -16,7 +16,7 @@ namespace DataFeed.Test
 			StringReader _xmlReader = new StringReader(TestFixture.XmlStr);
 			XPathDocument _xmlHandler = new XPathDocument(_xmlReader);
 			List<KeyValuePair<string, decimal>> _xmlFeedDataSorted;
-			FeedDataParserXml<XPathDocument> parserXml = new FeedDataParserXml<XPathDocument>();
+			FeedDataParserXml<XPathDocument> parserXml = new FeedDataParserXml<XPathDocument>(_xmlHandler);
 			parserXml.ParseFeedData(out _xmlFeedDataSorted);
 			AssertRunnersPrices(_xmlFeedDataSorted);
 		}
