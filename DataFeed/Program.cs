@@ -35,6 +35,18 @@ namespace DataFeed
 		        Trace.WriteLine($"\t\t{_priceHorse.Key}::${_priceHorse.Value}");
 	        }
 			
+			//process JSON data feed file
+			Trace.WriteLine("\n\r\n\rprocessing JSON data feed file...");
+	        List<KeyValuePair<string, decimal>> jsonFeedDataSorted;
+			FeedDataParserJson<JObject> parserJson = (FeedDataParserJson<JObject>)FeedDataParser<JObject>.ParserFactory(FeedDataParserJson<JObject>.FeedFileHandler);
+			parserJson.ParseFeedData(out jsonFeedDataSorted);
+
+	        Trace.WriteLine("\n\r\tAfter sorted by prices ascending, runners name and price pair:");
+	        foreach (var _pair in jsonFeedDataSorted)
+	        {
+		        Trace.WriteLine($"\t\t{_pair.Key}::${_pair.Value}");
+	        }
+
 	        Trace.Flush();
         }
 	}

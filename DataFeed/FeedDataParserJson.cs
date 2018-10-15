@@ -44,7 +44,26 @@ namespace DataFeed
 		/// <returns>bool: successful or not</returns>
 		public override bool ParseFeedData(out List<KeyValuePair<string, decimal>> _runnersPricesSorted)
 		{
+			IEnumerable<JToken> _selections = fileHandler.SelectTokens("$..Selections");
+
 			_runnersPricesSorted = new List<KeyValuePair<string, decimal>>();
+			Dictionary<string, decimal> _runnersPrices = new Dictionary<string, decimal>();
+			foreach (var _selection in _selections)
+			{
+				foreach (JObject _sel in _selection)
+				{
+					_runnersPrices.Add((string)_sel["Tags"]["name"], (decimal)_sel["Price"]);
+				}
+
+				Trace.WriteLine("\tOriginal runners name and price pair:");
+				foreach (var _pair in _runnersPrices)
+				{
+					Trace.WriteLine($"\t\t{_pair.Key}::${_pair.Value}");
+				}
+
+				SortByValue(_runnersPrices, out _runnersPricesSorted);
+
+			}
 			return true;
 		}
 	}
