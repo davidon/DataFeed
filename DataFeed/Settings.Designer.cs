@@ -31,5 +31,26 @@ namespace DataFeed {
                 return ((string)(this["FeedDataPath"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("/meeting/races/race/horses/horse")]
+        public string HorseNodesXPath {
+            get {
+                return ((string)(this["HorseNodesXPath"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("/meeting/races/race/prices/price/horses/horse")]
+        public string PriceNodesXPath {
+            get {
+                return ((string)(this["PriceNodesXPath"]));
+            }
+            set {
+                this["PriceNodesXPath"] = value;
+            }
+        }
     }
 }
